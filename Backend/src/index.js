@@ -13,20 +13,13 @@ const videoRouter = require("./routes/videoCreator");
 
 
 
+const cors = require("cors");
+
 app.use(cors({
-  origin: (origin, callback) => {
-    if (
-      !origin || 
-      origin === "http://localhost:5173" || 
-      /\.vercel\.app$/.test(new URL(origin).hostname)
-    ) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
+    origin: "https://codex-iota-lac.vercel.app", // ✅ use your Vercel domain
+    credentials: true
 }));
+
 
 
 app.use(express.json());
