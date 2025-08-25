@@ -11,13 +11,23 @@ const cors = require("cors");
 const aiRouter = require("./routes/aiChatting");
 const videoRouter = require("./routes/videoCreator");
 
+const cors = require("cors");
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",  // dev
-    "https://codex-jd4sv6ays-sunnyrais-projects.vercel.app" // your real deployed frontend
-  ],
-  credentials: true
+  origin: (origin, callback) => {
+    if (
+      !origin || 
+      origin === "http://localhost:5173" || 
+      /\.vercel\.app$/.test(new URL(origin).hostname)
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
