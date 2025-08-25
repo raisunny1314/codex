@@ -13,8 +13,8 @@ const userMiddleware = require("../middleware/userMiddleware");
 problemRouter.post("/create", adminMiddleware, createProblem);
 problemRouter.put("/update/:id", adminMiddleware, updateProblem);
 problemRouter.delete("/delete/:id", adminMiddleware, deleteProblem);
-problemRouter.get("/getAllProblem/:id", adminMiddleware, getAllproblemById);  //filter:::::::>>>> Problem.find{difficulty:"easy"}.skip(20).limit(10)
-problemRouter.get("/getAllProblem", adminMiddleware, getAllproblem); /// using pagination method  
+problemRouter.get("/getAllProblem/:id", userMiddleware, getAllproblemById);  //filter:::::::>>>> Problem.find{difficulty:"easy"}.skip(20).limit(10)
+problemRouter.get("/getAllProblem", userMiddleware, getAllproblem); /// using pagination method  
 
 problemRouter.get("/problemSolvedUser",userMiddleware, solvedProblemByUser);///submission Schema ::::::::>>>>> Code:language:time:memory:Status:pending/accepted.compilation errror/wronG Answer/TEST CASSES /SUBMITTED TIME/USER_ID/PROBLEM_ID
 problemRouter.get("/submittedProblem/:id", userMiddleware,submittedProblem);
