@@ -18,7 +18,9 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(cookieParser());
-
+app.get("/", (req, res) => {
+  res.send("🚀 Codex API is running!");
+});
 
 
 app.use("/user", authRouter);
