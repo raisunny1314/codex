@@ -12,7 +12,6 @@ const aiRouter = require("./routes/aiChatting");
 const videoRouter = require("./routes/videoCreator")
 app.use(cors({
   origin: [
-    "http://localhost:5173",              // local dev
     "https://codex-p3ls1d65p-sunnyrais-projects.vercel.app"   // deployed frontend (replace with your real Vercel URL)
   ],
   credentials: true
