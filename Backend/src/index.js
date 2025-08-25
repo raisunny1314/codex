@@ -13,7 +13,7 @@ const videoRouter = require("./routes/videoCreator");
 
 
 
-const cors = require("cors");
+
 
 app.use(cors({
     origin: "https://codex-iota-lac.vercel.app", // ✅ use your Vercel domain
