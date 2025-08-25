@@ -11,7 +11,7 @@ const cors = require("cors");
 const aiRouter = require("./routes/aiChatting");
 const videoRouter = require("./routes/videoCreator");
 
-const cors = require("cors");
+
 
 app.use(cors({
   origin: (origin, callback) => {
