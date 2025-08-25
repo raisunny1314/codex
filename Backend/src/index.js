@@ -11,9 +11,12 @@ const cors = require("cors");
 const aiRouter = require("./routes/aiChatting");
 const videoRouter = require("./routes/videoCreator")
 app.use(cors({
-    origin: "http://localhost:5173",
-    credentials: true
-}))
+  origin: [
+    "http://localhost:5173",              // local dev
+    "https://codex-frontend.vercel.app"   // deployed frontend (replace with your real Vercel URL)
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 
