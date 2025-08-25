@@ -64,11 +64,12 @@ const login = async (req, res) => {
         }
 
         const token = jwt.sign({ _id: user._id, email_id: user.email_id, role: user.role }, process.env.JWT_KEY, { expiresIn: 60 * 60 })
-        res.cookie("token", token, {
+     res.cookie("token", token, {
   httpOnly: true,
-  secure: process.env.NODE_ENV === "production", // true only in production
-  sameSite: "none"
+  secure: true,
+  sameSite: "None"
 });
+
         // res.status(200).send("Logged in  Successfully");//data to frontend
         res.status(200).json({
             user: reply,   
