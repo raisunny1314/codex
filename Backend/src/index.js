@@ -7,12 +7,12 @@ const authRouter = require("./routes/userAuthentication");
 const redisClient = require("./config/redis");
 const problemRouter = require("./routes/problemCreate");
 const submitRouter = require("./routes/submit");
-const  cors = require("cors");
+const cors = require("cors");
 const aiRouter = require("./routes/aiChatting");
 const videoRouter = require("./routes/videoCreator")
 app.use(cors({
-    origin:"http://localhost:5173",
-    credentials:true
+    origin: "http://localhost:5173",
+    credentials: true
 }))
 app.use(express.json());
 app.use(cookieParser());
@@ -20,22 +20,26 @@ app.use(cookieParser());
 
 
 app.use("/user", authRouter);
-app.use("/problem",problemRouter);
-app.use("/submission",submitRouter);
-app.use("/ai",aiRouter);
-app.use("/video",videoRouter);
+app.use("/problem", problemRouter);
+app.use("/submission", submitRouter);
+app.use("/ai", aiRouter);
+app.use("/video", videoRouter);
 
+const PORT = process.env.PORT || 3000;
 
 const initializeConnect = async () => {
     try {
         await Promise.all([main(), redisClient.connect()]);
-        console.log("DB connected")
-        app.listen(process.env.PORT, () => {
+        console.log("DB connected");
 
-            console.log("Server listening to port Number " + process.env.PORT);
+        app.listen(PORT, () => {
+            console.log("Server listening on port " + PORT);
         });
-    } catch (err) { console.log("Error" + err) };
-}
+    } catch (err) {
+        console.log("Error " + err);
+    }
+};
+
 initializeConnect();
 
 
