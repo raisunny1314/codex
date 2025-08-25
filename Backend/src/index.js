@@ -9,13 +9,16 @@ const problemRouter = require("./routes/problemCreate");
 const submitRouter = require("./routes/submit");
 const cors = require("cors");
 const aiRouter = require("./routes/aiChatting");
-const videoRouter = require("./routes/videoCreator")
+const videoRouter = require("./routes/videoCreator");
+
 app.use(cors({
   origin: [
-    "https://codex-p3ls1d65p-sunnyrais-projects.vercel.app"   // deployed frontend (replace with your real Vercel URL)
+    "http://localhost:5173",  // dev
+    "https://codex-jd4sv6ays-sunnyrais-projects.vercel.app" // your real deployed frontend
   ],
   credentials: true
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.get("/", (req, res) => {
