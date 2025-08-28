@@ -55,7 +55,7 @@ codex/
 │   ├── models/
 │   ├── routes/
 │   ├── utils/ (redis, cloudinary configs)
-│   └── server.js
+│   └── index.js
 │
 │── frontend/
 │   ├── src/
