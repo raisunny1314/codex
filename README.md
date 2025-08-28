@@ -39,36 +39,6 @@ Admins can manage problems, upload video solutions via **Cloudinary**, and maint
 
 ---
 
-## 🏗️ System Architecture  
-
-```mermaid
-flowchart TD
-
-subgraph Student["👩‍🎓 Student"]
-  A1[Login / Signup] --> A2[Select Problem]
-  A2 --> A3[Code Editor (Run / Submit)]
-  A3 --> A4[View Video Solution]
-  A3 --> A5[Submission History]
-end
-
-subgraph Admin["🛠️ Admin"]
-  B1[Login / JWT Auth] --> B2[Create / Update / Delete Problem]
-  B2 --> B3[Upload Video Solution (Cloudinary)]
-end
-
-subgraph Backend["⚙️ Backend (Node.js + Express)"]
-  A1 & A3 & A5 --> C1[API Gateway]
-  B1 & B2 & B3 --> C1
-  C1 --> C2[(MongoDB Database)]
-  C1 --> C3[(Redis Cache / Session Cookies)]
-  C1 --> C4{{Judge0 API}}
-  C1 --> C5[(Cloudinary Storage)]
-end
-
-Student <--> Backend
-Admin <--> Backend
-```
-
 ---
 
 ## 📂 Project Structure  
