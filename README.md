@@ -38,6 +38,18 @@ Admins can manage problems, upload video solutions via **Cloudinary**, and maint
 **Deployment:** Vercel (Frontend), Render (Backend)  
 
 ---
+## 📸 Screenshots
+
+![SignIn Page](<image/Screenshot (286).png.png>)
+![LogIn Page](<image/Screenshot (287).png>)
+![Home Problems Page](<image/Screenshot (288).png>)
+![Code Solve Editor page](<image/Screenshot (289).png>)
+![Refer. Solution](<image/Screenshot (290).png>)
+![Submission History](<image/Screenshot (291).png>)
+![AdminPaned](<image/Screenshot (292).png>)
+![Create a new Problem](<image/Screenshot (293).png>)
+![Delete a problem](<image/Screenshot (294).png>)
+![Add Solution Video](<image/Screenshot (295).png>)
 
 ---
 
