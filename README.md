@@ -40,7 +40,7 @@ Admins can manage problems, upload video solutions via **Cloudinary**, and maint
 ---
 ## 📸 Screenshots
 
-![SignIn Page](<image/Screenshot (286).png.png>)
+![SignIn Page](<frontend/Screenshot (286).png.png>)
 ![LogIn Page](<image/Screenshot (287).png>)
 ![Home Problems Page](<image/Screenshot (288).png>)
 ![Code Solve Editor page](<image/Screenshot (289).png>)
